@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+    <!--[if lte IE 9]>
+        <link href="css/onlyie.css" rel="stylesheet">
+    <![endif]-->
+    <title>Project</title>
+</head>
+
+<body>
+    <!-- header -->
+    <div id="header">
+        <div class="slider">
+            <ul>
+                <li><img src="img/slider/1.jpg" alt=""></li>
+                <!--[if !(IE)]>-->
+                <li><img src="img/slider/2.jpg" alt=""></li>
+                <li><img src="img/slider/3.jpg" alt=""></li>
+                <!--<![endif]-->
+            </ul>
+        </div>
+        <div class="cloneNav"></div>
+        <div id="navBar">
+            <a href="#" id="logo"><img src="img/logo.png" alt=""></a>
+            <div id="mainMenu">
+                <span id="menuTrigger" class="disableLink">Меню</span>
+                <ul id="menu">
+                    <li>
+                        <a href="index.html">Головна</a>
+                    </li>
+                    <li>
+                        <a href="#">Тести</a>
+                    </li>
+                    <li>
+                        <span id="aboutUsBig">Про нас <b class="triangle"></b></span>
+                        <span id="aboutUsSmall">Про нас <b class="triangle"></b></span>
+                        <ul id="subMenu">
+                            <li><a href="aboutus.html#lastNews">Останні новини</a></li>
+                            <li><a href="aboutus.html#ourTeam">Наша команда</a></li>
+                            <li><a href="aboutus.html#howWeWork">Як ми працюємо</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="contact.html">Контакти</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- content -->
+
+    <div id="main">
+        <div id="socialButton">
+            <div class="ya-share2" data-services="vkontakte,facebook,gplus,viber" data-title="Дуже важлива новина" data-description="Прочитавши це у вас піднімається настрій, з'являється посмішка та додається +500 до карми" data-image="https://lh3.googleusercontent.com/-oP1V6_uJuUc/AAAAAAAAAAI/AAAAAAAAAAc/hc2bD0Wjz0o/s265-c-k-no/photo.jpg"></div>
+        </div>
+        <div id="search">
+            <input type="text" id="searchInput" name="" value="" placeholder="Пошук"> <span id="searchButton" onclick="searchTest()">Пошук</span>
+        </div>
+        <ul class="pagination"></ul>
+        <div id="testsPreview"></div>
+        <ul class="pagination"></ul>
+    </div>
+    <!-- end content -->
+
+
+    <script src="js/es5-shim.min.js"></script>
+    <script src="js/share.min.js"></script>
+    <script src="js/css3-mediaquery.min.js"></script>
+    <script src="js/jquery1.12.4.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/tests.js"></script>
+</body>
+
+</html>

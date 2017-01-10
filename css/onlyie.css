@@ -1,0 +1,55 @@
+.slider .nav {
+  display: none;
+}
+#header {
+  background: #009688;
+}
+.fixed {
+  background: #009688;
+}
+#mainMenu li:hover ul {
+  background: #007769;
+}
+#mainMenu li:hover ul li :hover {
+  background: #00594e;
+}
+#mainMenu a:hover,
+#mainMenu span:hover {
+  background: #007769;
+}
+.shadow {
+  -webkit-box-shadow: 0px 0px 0px 0px #757575;
+  -moz-box-shadow: 0px 0px 0px 0px #757575;
+  box-shadow: 0px 0px 0px 0px #757575;
+}
+#start,
+#finish {
+  background: #009684;
+}
+#finish:hover {
+  background: #00776c;
+}
+.numberOfQuestion {
+  background: #009688;
+}
+.pagination .pageNavigation {
+  background: #009688;
+}
+.pagination .pageNavigation:hover {
+  background: #008276;
+}
+.pagination .activPagination {
+  background: #00776c;
+}
+#search #searchButton {
+  background: #009688;
+}
+#search #searchButton:hover {
+  background: #00776c;
+}
+.contactInfo form #sendMessege {
+  background: #009688;
+}
+.contactInfo form #sendMessege:hover {
+  background: #00776c;
+}

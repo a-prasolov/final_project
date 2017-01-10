@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+    <!--[if lte IE 9]>
+        <link href="css/onlyie.css" rel="stylesheet">
+    <![endif]-->
+    <title>Project</title>
+</head>
+
+<body>
+    <!-- header -->
+    <div id="header">
+        <div class="slider">
+            <ul>
+                <li><img src="img/slider/1.jpg" alt=""></li>
+                <!--[if !(IE)]>-->
+                <li><img src="img/slider/2.jpg" alt=""></li>
+                <li><img src="img/slider/3.jpg" alt=""></li>
+                <!--<![endif]-->
+            </ul>
+        </div>
+        <div class="cloneNav"></div>
+        <div id="navBar">
+            <a href="index.html" id="logo"><img src="img/logo.png" alt=""></a>
+            <div id="mainMenu">
+                <span id="menuTrigger" class="disableLink">Меню</span>
+                <ul id="menu">
+                    <li>
+                        <a href="index.html">Головна</a>
+                    </li>
+                    <li>
+                        <a href="tests.html">Тести</a>
+                    </li>
+                    <li>
+                        <span id="aboutUsBig">Про нас <b class="triangle"></b></span>
+                        <span id="aboutUsSmall">Про нас <b class="triangle"></b></span>
+                        <ul id="subMenu">
+                            <li><a href="aboutus.html#lastNews">Останні новини</a></li>
+                            <li><a href="aboutus.html#ourTeam">Наша команда</a></li>
+                            <li><a href="aboutus.html#howWeWork">Як ми працюємо</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Контакти</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- content -->
+
+    <div id="main">
+        <div id="socialButton">
+            <div class="ya-share2" data-services="vkontakte,facebook,gplus,viber" data-title="Дуже важлива новина" data-description="Прочитавши це у вас піднімається настрій, з'являється посмішка та додається +500 до карми" data-image="https://lh3.googleusercontent.com/-oP1V6_uJuUc/AAAAAAAAAAI/AAAAAAAAAAc/hc2bD0Wjz0o/s265-c-k-no/photo.jpg"></div>
+        </div>
+        <div class="contactInfo">
+            <p class="sideHeader">Контактна інформація</p>
+            <div class="infBlock">
+                <p class="contactInfHeader">Контактні телефони</p>
+                <p class="contactInf">+38 (093) 777 7777</p>
+                <p class="contactInf">+38 (096) 777 7777</p>
+            </div>
+            <div class="infBlock">
+                <p class="contactInfHeader">Факс</p>
+                <p class="contactInf">+380 777 777 777</p>
+            </div>
+            <div class="infBlock">
+                <p class="contactInfHeader">Адреса</p>
+                <p class="contactInf">Київ, Україна</p>
+                <p class="contactInf">вулиця Банкова 1а</p>
+            </div>
+        </div>
+        <div class="contactInfo">
+            <p class="sideHeader">Напишіть нам</p>
+            <form method="post" action="" onSubmit="return validateForm()">
+                <p class="sendFormTitle">Ваше ім'я</p>
+                <p>
+                    <input tabindex="1" class="sendFormInput text" type="text" name="name" placeholder="Ім'я та прізвище">
+                </p>
+                <p class="sendFormTitle">Тема повідомлення</p>
+                <p>
+                    <input tabindex="2" class="sendFormInput text" type="text" name="surname" placeholder="Тема повідомлення">
+                </p>
+                <p class="sendFormTitle">Ваш email</p>
+                <p>
+                    <input tabindex="3" class="sendFormInput mail" type="text" name="surname" placeholder="mail@mail.mail">
+                </p>
+                <p class="sendFormTitle">Ваше повідомлення</p>
+                <p>
+                    <textarea tabindex="4" name="bigtext"></textarea>
+                </p>
+                <p>
+                    <input tabindex="5" id="sendMessege" type="submit" value="Надіслати">
+                </p>
+            </form>
+        </div>
+
+    </div>
+    <div class="map_wrapper">
+        <div class="find">Як нас знайти</div>
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5638.898859865581!2d45.339894860263946!3d2.034355328440814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3d5843d676e87baf%3A0x57c8ed94b54b9999!2sNational+Government+Ministries+Building!5e0!3m2!1suk!2sua!4v1469562020669"
+            frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+
+    <script src="js/es5-shim.min.js"></script>
+    <script src="js/share.min.js"></script>
+    <script src="js/css3-mediaquery.min.js"></script>
+    <script src="js/jquery1.12.4.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+
+</html>
