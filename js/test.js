@@ -121,7 +121,7 @@ $(document).ready(function() {
     var jsonData;
     var jsonDataIndex;
 
-    $.getJSON("inf.json", function(data) {
+    $.getJSON("inf.min.json", function(data) {
         try {
             jsonData = data;
             var index = getTestName(data);

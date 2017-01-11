@@ -48,7 +48,7 @@ $(document).ready(function() {
         }
     }
 
-    $.getJSON("inf.json", function(data) {
+    $.getJSON("inf.min.json", function(data) {
         try {
             var pageNumber = 0,
                 k = 1;
