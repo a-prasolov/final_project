@@ -48,34 +48,40 @@ $(document).ready(function() {
         }
     }
 
-    $.getJSON("inf.min.json", function(data) {
-        try {
-            var pageNumber = 0,
-                k = 1;
-            for (var i = 0; i < data.themes.length; i++) {
-                for (var j = 0; j < data.themes[i].tests.length; j++) {
-                    $('#testsPreview').append('\
-                <a href="test.html" class="testBlock page' + pageNumber + '" onclick="setTestName(\'' + data.themes[i].tests[j].testName + '\')">\
-                    <img src="' + data.themes[i].tests[j].testImgUrl + '" alt="">\
-                    <div class="testBlockText">\
-                        <p class="testTitle">' + data.themes[i].tests[j].testName + '</p>\
-                        <p class="testThema">' + data.themes[i].theme + '</p>\
-                    </div>\
-                </a>');
-                    if (pageNumber > 0) {
-                        $('.page' + pageNumber).addClass('hideTest');
-                    }
-                    k++;
-                    if (k == 11) {
-                        pageNumber++;
-                        k = 1;
-                    }
+    function createTestsMarkup(n, data) {
+        var pageNumber = 0,
+            k = 1;
+        for (var i = 0; i < data.themes.length; i++) {
+            for (var j = 0; j < data.themes[i].tests.length; j++) {
+                $('#testsPreview').append('\
+                    <a href="test.html" class="testBlock page' + pageNumber + '" onclick="setTestName(\'' + data.themes[i].tests[j].testName + '\')">\
+                        <img src="' + data.themes[i].tests[j].testImgUrl + '" alt="">\
+                        <div class="testBlockText">\
+                            <p class="testTitle">' + data.themes[i].tests[j].testName + '</p>\
+                            <p class="testThema">' + data.themes[i].theme + '</p>\
+                        </div>\
+                    </a>');
+                if (pageNumber > 0) {
+                    $('.page' + pageNumber).addClass('hideTest');
+                }
+                k++;
+                if (k == n) {
+                    pageNumber++;
+                    k = 1;
                 }
             }
-            createPagination(pageNumber, '.pagination');
-        } catch (e) {
-            alert('Помилка в опрацюванні даних з json(вівід переліку тестів). Помилка ' + e.name + ":" + e.message + "\n" + e.stack);
         }
+        return pageNumber;
+    }
+
+    function createTestPage(data) {
+        var n = 11; // blocks of tests number
+        var pageNumber = createTestsMarkup(n, data);
+        createPagination(pageNumber, '.pagination');
+
+    }
+    $.getJSON("inf.min.json", function(data) {
+        createTestPage(data);
     });
 
 });

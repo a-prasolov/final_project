@@ -76,17 +76,13 @@ $(document).ready(function() {
     }
 
     $(document).on("click", ".slider .nav span", function() {
-        try {
-            $('.slider ul li img').width($(document).width());
-            var sl = $(this).closest(".slider");
-            $('.slider').find("span").removeClass("on");
-            $(this).addClass("on");
-            var obj = $(this).attr("rel");
-            sliderJS(obj, sl);
-            return false;
-        } catch (e) {
-            alert('Помилка в перемикачі слайдера. Помилка ' + e.name + ":" + e.message + "\n" + e.stack);
-        }
+        $('.slider ul li img').width($(document).width());
+        var sl = $(this).closest(".slider");
+        $('.slider').find("span").removeClass("on");
+        $(this).addClass("on");
+        var obj = $(this).attr("rel");
+        sliderJS(obj, sl);
+        return false;
     });
 
     function update() {
@@ -98,7 +94,7 @@ $(document).ready(function() {
                 $('.slider ul').css('margin-left', ulMargin);
             }
         } catch (e) {
-            alert('Помилка в функції зміни розміру вікна. ПомилкаЖ:' + e.name + ":" + e.message + "\n" + e.stack);
+            alert('Помилка в функції зміни розміру вікна. Помилка:' + e.name + ":" + e.message + "\n" + e.stack);
         }
     }
 
