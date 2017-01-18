@@ -58,6 +58,7 @@ $(document).ready(function() {
         return false;
     });
 
+    // slider
     $(".slider").each(function() {
         var obj = $(this);
         $(obj).append("<div class='nav'></div>");
@@ -75,15 +76,33 @@ $(document).ready(function() {
         $(ul).animate({ marginLeft: "-" + step * obj }, 500);
     }
 
-    $(document).on("click", ".slider .nav span", function() {
-        $('.slider ul li img').width($(document).width());
-        var sl = $(this).closest(".slider");
-        $('.slider').find("span").removeClass("on");
-        $(this).addClass("on");
-        var obj = $(this).attr("rel");
-        sliderJS(obj, sl);
-        return false;
-    });
+    function sliderAnimation() {
+        // function autoMove() {
+        //     setInterval(function() {
+        //         var sl = $(this).closest(".slider");
+        //         $('.slider').find("span").removeClass("on");
+        //         $(this).addClass("on");
+        //         var obj = $(this).attr("rel");
+        //         var len = $('.slider li').length;
+        //         if (obj + 1 >= len) {
+        //             sliderJS(0, sl);
+        //         } else {
+        //             sliderJS(obj + 1, sl);
+        //         }
+        //     }, 1000);
+        // }
+        //autoMove();
+        $(document).on("click", ".slider .nav span", function() {
+            $('.slider ul li img').width($(document).width());
+            var sl = $(this).closest(".slider");
+            $('.slider').find("span").removeClass("on");
+            $(this).addClass("on");
+            var obj = $(this).attr("rel");
+            sliderJS(obj, sl);
+            return false;
+        });
+    }
+    sliderAnimation();
 
     function update() {
         try {
