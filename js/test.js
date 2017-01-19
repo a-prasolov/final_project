@@ -134,55 +134,26 @@ $(document).ready(function() {
     //window.finish = finish;
 
     function generateTestQuestionsMarkup(data, index) {
+        var htmlToAppend = '';
         $('#headerBlock').append('<p>' + data.themes[index.themeNum].tests[index.nameNum].testName + '</p><p>' + data.themes[index.themeNum].theme + '</p>');
         for (var i = 0; i < data.themes[index.themeNum].tests[index.nameNum].questions.length; i++) {
             answer[i] = data.themes[index.themeNum].tests[index.nameNum].questions[i].correctAnswer;
+            htmlToAppend = '';
             if (i == 0) {
-                $('#questions').append('\
-                    <div class="questionWrapper active" id="num' + i + '">\
-                        <p class="question">' + (i + 1) + ') ' + data.themes[index.themeNum].tests[index.nameNum].questions[i].questionTitle + '</p>\
-                        <div class="ansver">\
-                            <input type="radio" name="test' + i + '" id="test' + i + '0" value="0" />\
-                            <label for="test' + i + '0">' + data.themes[index.themeNum].tests[index.nameNum].questions[i].answers[0] + '</label>\
-                        </div>\
-                        <div class="ansver">\
-                            <input type="radio" name="test' + i + '" id="test' + i + '1" value="1" />\
-                            <label for="test' + i + '1">' + data.themes[index.themeNum].tests[index.nameNum].questions[i].answers[1] + '</label>\
-                        </div>\
-                        <div class="ansver">\
-                            <input type="radio" name="test' + i + '" id="test' + i + '2" value="2" />\
-                            <label for="test' + i + '2">' + data.themes[index.themeNum].tests[index.nameNum].questions[i].answers[2] + '</label>\
-                        </div>\
-                            <div class="ansver">\
-                            <input type="radio" name="test' + i + '" id="test' + i + '3" value="3" />\
-                            <label for="test' + i + '3">' + data.themes[index.themeNum].tests[index.nameNum].questions[i].answers[3] + '</label>\
-                        </div>\
-                    </div>');
-                $('#questionsList').append('<a class="numberOfQuestion activeNum" id="listNum' + i + '" onclick="displayQuestion(' + i + ')">' + (i + 1) + '</a>');
-
+                htmlToAppend += '<div class="questionWrapper active" id="num' + i + '">';
             } else {
-                $('#questions').append('\
-                    <div class="questionWrapper" id="num' + i + '">\
-                        <p class="question">' + (i + 1) + ') ' + data.themes[index.themeNum].tests[index.nameNum].questions[i].questionTitle + '</p>\
-                        <div class="ansver">\
-                            <input type="radio" name="test' + i + '" id="test' + i + '0" value="0" />\
-                            <label for="test' + i + '0">' + data.themes[index.themeNum].tests[index.nameNum].questions[i].answers[0] + '</label>\
-                        </div>\
-                        <div class="ansver">\
-                            <input type="radio" name="test' + i + '" id="test' + i + '1" value="1" />\
-                            <label for="test' + i + '1">' + data.themes[index.themeNum].tests[index.nameNum].questions[i].answers[1] + '</label>\
-                        </div>\
-                        <div class="ansver">\
-                            <input type="radio" name="test' + i + '" id="test' + i + '2" value="2" />\
-                            <label for="test' + i + '2">' + data.themes[index.themeNum].tests[index.nameNum].questions[i].answers[2] + '</label>\
-                        </div>\
-                            <div class="ansver">\
-                            <input type="radio" name="test' + i + '" id="test' + i + '3" value="3" />\
-                            <label for="test' + i + '3">' + data.themes[index.themeNum].tests[index.nameNum].questions[i].answers[3] + '</label>\
-                        </div>\
-                    </div>');
-                $('#questionsList').append('<a class="numberOfQuestion" id="listNum' + i + '" onclick="displayQuestion(' + i + ')">' + (i + 1) + '</a>');
+                htmlToAppend += '<div class="questionWrapper" id="num' + i + '">';
             }
+            htmlToAppend += '<p class="question">' + (i + 1) + ') ' + data.themes[index.themeNum].tests[index.nameNum].questions[i].questionTitle + '</p>';
+            for (var j = 0; j < data.themes[index.themeNum].tests[index.nameNum].questions[i].answers.length; j++) {
+                htmlToAppend += '<div class="ansver">\
+                                    <input type="radio" name="test' + i + '" id="test' + i + '' + j + '" value="' + j + '" />\
+                                    <label for="test' + i + '' + j + '">' + data.themes[index.themeNum].tests[index.nameNum].questions[i].answers[j] + '</label>\
+                                </div>'
+            }
+            htmlToAppend += '</div>';
+            $('#questions').append(htmlToAppend);
+            $('#questionsList').append('<a class="numberOfQuestion activeNum" id="listNum' + i + '" onclick="displayQuestion(' + i + ')">' + (i + 1) + '</a>');
         }
     }
     // get data from json to use in other functions

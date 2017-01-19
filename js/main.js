@@ -77,21 +77,6 @@ $(document).ready(function() {
     }
 
     function sliderAnimation() {
-        // function autoMove() {
-        //     setInterval(function() {
-        //         var sl = $(this).closest(".slider");
-        //         $('.slider').find("span").removeClass("on");
-        //         $(this).addClass("on");
-        //         var obj = $(this).attr("rel");
-        //         var len = $('.slider li').length;
-        //         if (obj + 1 >= len) {
-        //             sliderJS(0, sl);
-        //         } else {
-        //             sliderJS(obj + 1, sl);
-        //         }
-        //     }, 1000);
-        // }
-        //autoMove();
         $(document).on("click", ".slider .nav span", function() {
             $('.slider ul li img').width($(document).width());
             var sl = $(this).closest(".slider");
